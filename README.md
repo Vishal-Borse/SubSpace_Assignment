@@ -1,5 +1,3 @@
-Certainly! Here's a README file for the provided code:
-
 ---
 
 # SubSpace Assignment - Express Server with Caching
@@ -82,7 +80,7 @@ Example usage:
 - Perform a blog search:
 
   ```http
-  GET /api/blog-search?query=privacy
+  GET /api/blog-search?query=YOUR_SEARCH_WORD
   ```
 
 ## Contributing
