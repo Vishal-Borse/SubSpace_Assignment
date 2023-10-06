@@ -8,7 +8,7 @@ const blogsAnalyticsCache = _.memoize(async () => {
   const startTime = new Date(); // Record the start time
   try {
     //Fetching blog data from the third-party API
-    const response = await axios.get(process.env.API_URL, {
+    const response = await axios.get(API_URL, {
       headers: {
         "x-hasura-admin-secret": process.env.HASURA_ADMIN_SECRET,
       },
@@ -43,6 +43,7 @@ const blogsAnalyticsCache = _.memoize(async () => {
 
     return statistics;
   } catch (error) {
+    console.log(error);
     throw error; // Rethrow the error to be handled later
   }
 });

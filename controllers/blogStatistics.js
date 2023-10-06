@@ -8,6 +8,7 @@ const blogStatistics = async (req, res) => {
     statistics.timeToServeRequest = timeToServeRequest; // Add time to serve request to the response
     res.json(statistics);
   } catch (error) {
+    console.log(error);
     // Handle errors
     if (error.response) {
       // Handle errors related to the HTTP response (e.g., 404, 401)

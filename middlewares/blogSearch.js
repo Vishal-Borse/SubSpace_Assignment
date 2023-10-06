@@ -9,7 +9,7 @@ const blogSearchCache = _.memoize(
     const startTime = new Date(); // Record the start time
     try {
       // Fetch blog data from the third-party API
-      const response = await axios.get(process.env.API_URL, {
+      const response = await axios.get(API_URL, {
         headers: {
           "x-hasura-admin-secret": process.env.HASURA_ADMIN_SECRET,
         },
