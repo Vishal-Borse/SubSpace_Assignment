@@ -1,8 +1,6 @@
----
-
 # SubSpace Assignment - Express Server with Caching
 
-This is an Express.js server application that serves as a RESTful API for fetching blog statistics and performing blog searches. It uses Lodash's `_.memoize` function for caching the results of these operations.
+This is an Express.js server application that serves as a RESTful API for fetching blog statistics and performing blog searches. It uses Lodash functions for data analysis and caching, specifically Lodash's `_.memoize` function is used for caching mechanism
 
 ## Table of Contents
 
@@ -21,7 +19,7 @@ To get started with this application, follow these steps:
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Vishal-Borse/SubSpace_Assignment.git
    ```
 
 2. Install the required dependencies:
@@ -30,30 +28,34 @@ To get started with this application, follow these steps:
    npm install
    ```
 
-3. Create a `.env` file in the root directory and add your environment variables, including `PORT` and `HASURA_ADMIN_SECRET`.
+3. Create a `.env` file in the root directory and add your environment variables,`HASURA_ADMIN_SECRET`.
 
    ```
-   PORT=3000
    HASURA_ADMIN_SECRET=your-secret-key
    ```
 
 4. Start the Express server:
 
+   To start the server in development mode with automatic code reloading, you can run:
+   ```bash
+   npm run dev
+   ```
+   To start the server in production mode, you can run:
    ```bash
    npm start
    ```
 
 ## Caching Mechanism
 
-This application uses Lodash's `_.memoize` function to cache the results of blog statistics and blog searches. The cache is cleared automatically every 20 seconds to ensure that the data remains up-to-date.
+This application uses Lodash's `_.memoize` function for caching the results of blog statistics and blog searches. The cache is cleared automatically every 20 seconds to ensure that the data remains up-to-date.
 
 ## API Endpoints
 
 The server exposes the following API endpoints:
 
-- `GET /api/blog-stats`: Retrieves blog statistics, including the total number of blogs, the title of the longest blog, the number of blogs with "privacy" in their title, and unique blog titles.
+- `GET /api/blog-stats`: Retrieves blog statistics, including the total number of blogs, the title of the longest blog, the number of blogs with "privacy" in their title, and unique blog titles. Lodash is used for data analysis in this endpoint.
 
-- `GET /api/blog-search`: Performs a blog search based on a query parameter. It returns a list of blog titles that match the query.
+- `GET /api/blog-search?query=your_query_here`: Performs a blog search based on a query parameter. It returns a list of blog titles that match the query. Lodash is used for searching and data manipulation in this endpoint.
 
 ## Error Handling
 
@@ -80,7 +82,7 @@ Example usage:
 - Perform a blog search:
 
   ```http
-  GET /api/blog-search?query=YOUR_SEARCH_WORD
+  GET /api/blog-search?query=your_query_here
   ```
 
 ## Contributing
@@ -93,3 +95,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
+Feel free to customize this README file further to include any additional information or instructions specific to your use case.
