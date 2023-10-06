@@ -2,6 +2,8 @@ const axios = require("axios");
 const _ = require("lodash");
 require("dotenv").config();
 
+API_URL = "https://intent-kit-16.hasura.app/api/rest/blogs";
+
 const blogsAnalyticsCache = _.memoize(async () => {
   const startTime = new Date(); // Record the start time
   try {
